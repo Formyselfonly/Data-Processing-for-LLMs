@@ -21,7 +21,7 @@
       3. Consistency checks Consistency checks ensure the data across the dataset adheres to consistent formats, rules, or conventions
       4. Deduplication
 
-   2. Data Feature Engineeing 说白了就是特征提取
+   2. Data Feature Engineeing 
 
       ```python
       
