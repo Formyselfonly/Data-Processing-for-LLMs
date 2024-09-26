@@ -10,8 +10,6 @@
 
 # Data Processing steps
 
-[Data Processing Example](https://www.notion.so/Data-Processing-Example-bc444406b9a84b0196dc473abff41727?pvs=21)
-
 1. Data Collection
 
 2. Data Pre-processing
