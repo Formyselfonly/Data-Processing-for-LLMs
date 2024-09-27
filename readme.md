@@ -114,3 +114,10 @@ for question in questions:
 # Pre processing tech code
 
 The pre processing technology code can be found in the code folder.
+
+- Normalizing the Content
+- Metadata Extraction and Chunking
+-  Preprocessing PDFs and Images
+- Extracting Tables
+- Example:Build Your Own RAG Bot
+
