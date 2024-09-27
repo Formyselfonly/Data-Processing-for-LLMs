@@ -25,28 +25,19 @@ unstructured_client = UnstructuredClient(
 #There are three main types which are:html,ppt,pdf
 # We pre-processing them into json format to normalizaiton
 
-# Type1.html unstructured data processing
-html_file="../resources/medium_blog.html"
-html_elements=partition_html(filename=html_file)
-html_element_dict=[e.to_dict() for e in html_elements]
-example_output=json.dump(html_element_dict[10:14],indent=3)
+# Step1. unstructured data processing
+winter_sport_file="../resources/winter_sports.pdf"
+winter_sport_elements=partition_pdf(filename=winter_sport_file)
+winter_sport_element_dict=[e.to_dict() for e in winter_sport_elements]
+example_output=json.dump(winter_sport_element_dict[:],indent=3)
+
+
+# Step2.See the structure of the winter_sport_file and than choose meethod to process
 print(example_output)
 
-# Type2.ppt unstructured data processing
-ppt_file="../resources/msft_openai.pptx"
-ppt_elements=partition_ppt(filename=ppt_file)
-ppt_element_dict=[e.to_dict() for e in ppt_elements]
-example_output=json.dump(ppt_element_dict[:],indent=3)
-
-# Type3.pdf unstructured data processing
-pdf_file="../resources/CoT.pdf"
-pdf_elements=partition_pdf(filename=pdf_file,
-                           infer_table_structure=True,
-                           strategy="hi_res"
-                           )
-pdf_element_dict=[e.to_dict() for e in pdf_elements]
-example_output=json.dump(pdf_element_dict[:],indent=3)
-
-# Type 4.For other type of file,
-# from unstructured.partition.(type) import (type)
-# And the usage is the same as type 1,2,3
+# Step3.Find elements associated with chapters
+# To be written
+# Step4.Load documents into a vector db
+# To be written
+# Step5.peek&search&chunking content in vector db
+# To be written
