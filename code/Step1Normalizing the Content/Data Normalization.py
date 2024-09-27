@@ -1,8 +1,8 @@
 import json
 import dotenv
 import os
-import cv2
 from unstructured.partition.html import partition_html
+from unstructured.partition.ppt import partition_ppt
 from unstructured.partition.pptx import partition_pptx
 from unstructured.staging.base import dict_to_elements, elements_to_json
 from unstructured_client import UnstructuredClient
@@ -21,4 +21,17 @@ unstructured_client = UnstructuredClient(
     server_url=API_URL
 )
 
-html_demo_image=cv2.imread()
+# Type1.html unstructured data processing
+html_file="../resources/medium_blog.html"
+html_elements=partition_html(filename=html_file)
+html_element_dict=[e.to_dict() for e in html_elements]
+example_output=json.dump(html_element_dict[10:14],indent=3)
+print(example_output)
+
+# Type2.ppt unstructured data processing
+ppt_file="../resources/msft_openai.pptx"
+ppt_elements=partition_ppt(filename=ppt_file)
+ppt_element_dict=[e.to_dict() for e in ppt_elements]
+example_output=json.dump(ppt_element_dict[:],indent=3)
+
+# Type3.pdf unstructured data processing
